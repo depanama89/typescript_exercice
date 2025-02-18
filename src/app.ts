@@ -1,17 +1,15 @@
-enum jourSemaine {
-  lundi,
-  mardi,
-  mercredi,
-  jeudi,
-  vendredi,
-  samedi,
+// avec reduce
+// function sommes(nombres: number[]): number {
+//   return nombres.reduce((total, nombres) => total + nombres, 0);
+// }
+
+// sans reduce
+function sommes(nombres: number[]): number {
+  let som = 0;
+  for (let i = 0; i < nombres.length; i++) {
+    som += nombres[i];
+  }
+  return som;
 }
-
-const jour: jourSemaine = jourSemaine.lundi;
-
-// console.log(jourSemaine[jour]);
-
-function afficherJour(jour: jourSemaine) {
-  console.log(`aujourd'hui ,c'est : ${jourSemaine[jour]}`);
-}
-afficherJour(jourSemaine.samedi);
+const nombres = [1, 2, 3, 4, 5, 6, 7];
+console.log(sommes(nombres));

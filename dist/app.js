@@ -1,15 +1,14 @@
-var jourSemaine;
-(function (jourSemaine) {
-    jourSemaine[jourSemaine["lundi"] = 0] = "lundi";
-    jourSemaine[jourSemaine["mardi"] = 1] = "mardi";
-    jourSemaine[jourSemaine["mercredi"] = 2] = "mercredi";
-    jourSemaine[jourSemaine["jeudi"] = 3] = "jeudi";
-    jourSemaine[jourSemaine["vendredi"] = 4] = "vendredi";
-    jourSemaine[jourSemaine["samedi"] = 5] = "samedi";
-})(jourSemaine || (jourSemaine = {}));
-const jour = jourSemaine.lundi;
-// console.log(jourSemaine[jour]);
-function afficherJour(jour) {
-    console.log(`aujourd'hui ,c'est : ${jourSemaine[jour]}`);
+// avec reduce
+// function sommes(nombres: number[]): number {
+//   return nombres.reduce((total, nombres) => total + nombres, 0);
+// }
+// sans reduce
+function sommes(nombres) {
+    let som = 0;
+    for (let i = 0; i < nombres.length; i++) {
+        som += nombres[i];
+    }
+    return som;
 }
-afficherJour(jourSemaine.samedi);
+const nombres = [1, 2, 3, 4, 5, 6, 7];
+console.log(sommes(nombres));
