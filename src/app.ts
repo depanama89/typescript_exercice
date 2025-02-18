@@ -1,44 +1,17 @@
-// class Car {
-//   public make: string;
-//   public model: string;
-//   public roue: number;
-//   private year: number;
-//   constructor(make: string, roue: number, model: string, year: number) {
-//     this.make = make;
-//     this.model = model;
-//     this.roue = roue;
-//     this.year = year;
-//   }
-
-//   public getCarInfo(): string {
-//     return `${this.make} ${this.roue} ${this.model} ${this.year}`;
-//   }
-// }
-
-// const myCar = new Car("toyota", 4, "corolla", 2020);
-// console.log(myCar.getCarInfo());
-let nom: string = "patrick";
-console.log(nom);
-function addNombre(a: number, b: number): number {
-  return a + b;
+enum jourSemaine {
+  lundi,
+  mardi,
+  mercredi,
+  jeudi,
+  vendredi,
+  samedi,
 }
-function multiplicationNombre(c: number, d: number): number {
-  return c * d;
-}
-console.log(addNombre(2, 3));
-console.log(multiplicationNombre(4, 8));
-const addTwoNumber = (params: { firstNumber: number; twoNumber: number }) => {
-  return params.firstNumber + params.twoNumber;
-};
 
-console.log(addTwoNumber({ firstNumber: 7, twoNumber: 7 }));
+const jour: jourSemaine = jourSemaine.lundi;
 
-function optionnelParams(params: { first: string; second?: string }) {
-  if (params.second) {
-    return `${params.first} : ${params.second}`;
-  } else {
-    return `${params.first}`;
-  }
+// console.log(jourSemaine[jour]);
+
+function afficherJour(jour: jourSemaine) {
+  console.log(`aujourd'hui ,c'est : ${jourSemaine[jour]}`);
 }
-// console.log(optionnelParams({ first: "Patrick", second: "Kudiatu" }));
-console.log(optionnelParams({ first: "Tomanitu" }));
+afficherJour(jourSemaine.samedi);
